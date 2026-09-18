@@ -326,6 +326,76 @@
     border-radius:10px;
   }
 
+  .cost-group{margin-bottom:16px;}
+  .cost-group:last-of-type{margin-bottom:0;}
+  .cost-group h3{
+    margin:0 0 8px 2px;
+    font-size:12px;
+    font-weight:800;
+    color:var(--sub);
+    letter-spacing:.02em;
+  }
+  .cost-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:10px;
+    font-size:14px;
+    padding:8px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .cost-row:last-child{border-bottom:none;}
+  .cost-row .label small{display:block;color:var(--sub);font-size:12px;margin-top:2px;}
+  .cost-row .amt{
+    flex:0 0 auto;
+    font-weight:700;
+    font-variant-numeric:tabular-nums;
+    white-space:nowrap;
+  }
+  .cost-summary{
+    display:grid;
+    gap:8px;
+    margin-top:16px;
+  }
+  .cost-summary .line{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 16px;
+    border-radius:12px;
+  }
+  .cost-summary .line .t{font-weight:700;font-size:13.5px;}
+  .cost-summary .line .v{font-weight:800;font-size:18px;font-variant-numeric:tabular-nums;}
+  .cost-summary .total{background:var(--accent2-soft);}
+  .cost-summary .total .v{color:var(--accent2);}
+  .cost-summary .per{background:var(--accent-soft);}
+  .cost-summary .per .v{color:var(--accent);}
+  .cost-summary .per .t small{display:block;font-weight:500;color:var(--sub);margin-top:2px;}
+  .cost-note{
+    margin:12px 2px 0;
+    font-size:11.5px;
+    color:var(--sub);
+    line-height:1.5;
+  }
+  .cost-pay{
+    margin-top:14px;
+    display:grid;
+    gap:8px;
+  }
+  .cost-pay-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    background:var(--chip);
+    border-radius:10px;
+    padding:11px 14px;
+    font-size:13px;
+  }
+  .cost-pay-item .k{font-weight:700;color:var(--sub);white-space:nowrap;}
+  .cost-pay-item .v{font-weight:700;text-align:right;}
+  .cost-pay-item .v small{display:block;color:var(--sub);font-weight:500;font-size:11px;margin-top:1px;}
+
   footer{
     text-align:center;
     padding:30px 18px 10px;
@@ -548,6 +618,58 @@
         <li><b>보행화</b> — 편안한 워킹화 / 운동화</li>
         <li><b>덧신·두꺼운 양말</b> — 화엄사·사성암 등 좌식 공간용</li>
       </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>💰 여행 경비 정산</h2>
+    <div class="card">
+      <div class="cost-group">
+        <h3>숙소</h3>
+        <div class="cost-row">
+          <span class="label">1일차 · 여수 R&amp;B 호텔</span>
+          <span class="amt">250,000원</span>
+        </div>
+        <div class="cost-row">
+          <span class="label">2일차 · 켄싱턴리조트<small>룸 2개 · 조식포함 (169,000 + 199,000)</small></span>
+          <span class="amt">368,000원</span>
+        </div>
+      </div>
+      <div class="cost-group">
+        <h3>렌터카</h3>
+        <div class="cost-row">
+          <span class="label">1호차</span>
+          <span class="amt">198,250원</span>
+        </div>
+        <div class="cost-row">
+          <span class="label">2호차</span>
+          <span class="amt">274,425원</span>
+        </div>
+      </div>
+
+      <div class="cost-summary">
+        <div class="line total">
+          <span class="t">총 지출</span>
+          <span class="v">1,090,675원</span>
+        </div>
+        <div class="line per">
+          <span class="t">1인 환산<small>8명 기준</small></span>
+          <span class="v">약 136,334원</span>
+        </div>
+      </div>
+
+      <div class="cost-pay">
+        <div class="cost-pay-item">
+          <span class="k">1차 회비</span>
+          <span class="v">1인 200,000원<small>사전 납부</small></span>
+        </div>
+        <div class="cost-pay-item">
+          <span class="k">최종 정산</span>
+          <span class="v">여행 종료 후 잔액 정산</span>
+        </div>
+      </div>
+
+      <p class="cost-note">* 숙소·렌터카 정산 기준이며, KTX 왕복 및 개별 식비·간식비는 별도입니다.</p>
     </div>
   </section>
 
