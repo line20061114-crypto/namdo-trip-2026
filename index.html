@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>남도 여행 · 11월 20일~22일</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="description" content="남도 여행 일정 안내 (비공개 링크)">
+<style>
+  :root{
+    --bg:#f6f4ef;
+    --card:#ffffff;
+    --ink:#1f2320;
+    --sub:#6b6459;
+    --line:#e7e2d8;
+    --accent:#b5623a;
+    --accent-soft:#f3e3d8;
+    --accent2:#3f6b52;
+    --accent2-soft:#e2ece5;
+    --chip:#efe9dd;
+    --radius:18px;
+    --shadow:0 1px 2px rgba(30,25,15,.04), 0 8px 24px -12px rgba(30,25,15,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#15130f;
+      --card:#1e1b16;
+      --ink:#f2ede3;
+      --sub:#b0a89a;
+      --line:#332e26;
+      --accent:#e08a5e;
+      --accent-soft:#3a2a20;
+      --accent2:#7fb597;
+      --accent2-soft:#213229;
+      --chip:#2a251e;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 28px -14px rgba(0,0,0,.6);
+    }
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI",Roboto,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:56px;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 18px;}
+
+  header.hero{
+    padding:44px 18px 28px;
+    text-align:center;
+    background:
+      radial-gradient(120% 100% at 50% 0%, var(--accent-soft), transparent 60%),
+      var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  header.hero .eyebrow{
+    font-size:13px;
+    letter-spacing:.14em;
+    color:var(--accent);
+    font-weight:700;
+    text-transform:uppercase;
+  }
+  header.hero h1{
+    margin:10px 0 6px;
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-.02em;
+  }
+  header.hero .dates{
+    font-size:15px;
+    color:var(--sub);
+    font-weight:600;
+  }
+  header.hero .route{
+    margin-top:14px;
+    font-size:13.5px;
+    color:var(--sub);
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    flex-wrap:wrap;
+  }
+  header.hero .route span:not(.arrow){
+    background:var(--card);
+    border:1px solid var(--line);
+    padding:4px 10px;
+    border-radius:999px;
+  }
+  header.hero .route .arrow{color:var(--sub);}
+
+  main{padding-top:20px;}
+
+  .stat-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .stat{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:12px 8px;
+    text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .stat b{display:block;font-size:17px;letter-spacing:-.01em;}
+  .stat span{font-size:11.5px;color:var(--sub);}
+
+  section{margin-bottom:22px;}
+  section > h2{
+    font-size:14px;
+    font-weight:800;
+    color:var(--sub);
+    letter-spacing:.02em;
+    margin:0 0 10px 2px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:18px;
+  }
+  .card + .card{margin-top:10px;}
+
+  .people{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .people .chip{
+    background:var(--chip);
+    border-radius:999px;
+    padding:7px 13px;
+    font-size:13.5px;
+    font-weight:600;
+  }
+
+  .kv{
+    display:flex;
+    gap:10px;
+    padding:9px 0;
+    border-bottom:1px dashed var(--line);
+    font-size:14.5px;
+  }
+  .kv:last-child{border-bottom:none;}
+  .kv .k{
+    flex:0 0 74px;
+    color:var(--sub);
+    font-weight:700;
+    font-size:13px;
+    padding-top:1px;
+  }
+  .kv .v{flex:1;}
+  .kv .v b{font-weight:700;}
+  .kv .v small{color:var(--sub);}
+
+  .lodge{
+    display:grid;
+    gap:10px;
+  }
+  .lodge .item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    padding:12px;
+    background:var(--accent2-soft);
+    border-radius:12px;
+  }
+  .lodge .day{
+    flex:0 0 auto;
+    background:var(--accent2);
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+    padding:5px 9px;
+    border-radius:8px;
+    white-space:nowrap;
+  }
+  .lodge .name{font-weight:700;font-size:14.5px;}
+  .lodge .loc{font-size:12.5px;color:var(--sub);}
+
+  details.day{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  details.day + details.day{margin-top:10px;}
+  details.day summary{
+    list-style:none;
+    cursor:pointer;
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:700;
+    font-size:15px;
+  }
+  details.day summary::-webkit-details-marker{display:none;}
+  details.day summary .badge{
+    flex:0 0 auto;
+    background:var(--accent);
+    color:#fff;
+    font-size:12px;
+    font-weight:800;
+    padding:5px 10px;
+    border-radius:8px;
+  }
+  details.day summary .sub{
+    font-weight:500;
+    font-size:12.5px;
+    color:var(--sub);
+    margin-left:auto;
+    text-align:right;
+  }
+  details.day summary .chev{
+    flex:0 0 auto;
+    font-size:12px;
+    color:var(--sub);
+    transition:transform .2s ease;
+  }
+  details.day[open] summary .chev{transform:rotate(180deg);}
+  details.day .body{
+    padding:0 18px 18px;
+    border-top:1px solid var(--line);
+    padding-top:14px;
+  }
+
+  .timeline{position:relative;padding-left:18px;}
+  .timeline::before{
+    content:"";
+    position:absolute;left:5px;top:4px;bottom:4px;
+    width:2px;background:var(--line);
+  }
+  .t-item{position:relative;padding:0 0 16px 14px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:"";
+    position:absolute;left:-17px;top:4px;
+    width:9px;height:9px;border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px var(--card);
+  }
+  .t-item .time{font-size:12px;font-weight:800;color:var(--accent);}
+  .t-item .desc{font-size:14px;margin-top:2px;}
+  .t-item .desc b{font-weight:700;}
+  .t-item .desc small{color:var(--sub);display:block;margin-top:2px;font-weight:400;}
+
+  .split{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin:14px 0;
+  }
+  .split .team{
+    background:var(--chip);
+    border-radius:12px;
+    padding:12px;
+  }
+  .split .team h4{margin:0 0 8px;font-size:12.5px;font-weight:800;}
+  .split .team ul{margin:0;padding-left:16px;font-size:12.5px;color:var(--sub);}
+  .split .team ul li{margin-bottom:3px;}
+
+  .check-list{list-style:none;margin:0;padding:0;display:grid;gap:9px;}
+  .check-list li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    padding:9px 11px;
+    border-radius:10px;
+    background:var(--chip);
+  }
+  .check-list li.done{
+    background:var(--accent2-soft);
+    color:var(--sub);
+    text-decoration:line-through;
+    text-decoration-color:var(--sub);
+  }
+  .check-list li .dot{
+    flex:0 0 auto;
+    width:18px;height:18px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;
+    background:var(--card);
+    border:1.5px solid var(--line);
+  }
+  .check-list li.done .dot{
+    background:var(--accent2);
+    border-color:var(--accent2);
+    color:#fff;
+  }
+  .check-list li .who{margin-left:auto;font-size:11.5px;color:var(--sub);white-space:nowrap;}
+
+  .pack ul{margin:8px 0 0;padding-left:18px;font-size:14px;}
+  .pack ul li{margin-bottom:6px;}
+  .pack p.note{
+    margin:0;
+    font-size:13px;
+    color:var(--sub);
+    background:var(--accent-soft);
+    padding:10px 12px;
+    border-radius:10px;
+  }
+
+  footer{
+    text-align:center;
+    padding:30px 18px 10px;
+    color:var(--sub);
+    font-size:12px;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="eyebrow">Travel Notice</div>
+  <h1>🐚 남도 여행</h1>
+  <div class="dates">2026년 11월 20일(금) — 22일(일)</div>
+  <div class="route">
+    <span>순천</span><span class="arrow">→</span>
+    <span>여수</span><span class="arrow">→</span>
+    <span>보성 / 구례</span><span class="arrow">→</span>
+    <span>하동</span>
+  </div>
+</header>
+
+<div class="wrap">
+<main>
+
+  <div class="stat-row">
+    <div class="stat"><b>2박 3일</b><span>11.20 ~ 11.22</span></div>
+    <div class="stat"><b>8명</b><span>참가 인원</span></div>
+    <div class="stat"><b>렌터카 2대</b><span>+ KTX 왕복</span></div>
+  </div>
+
+  <section>
+    <h2>🧑‍🤝‍🧑 참여자</h2>
+    <div class="card">
+      <div class="people">
+        <span class="chip">김영민</span>
+        <span class="chip">김희경</span>
+        <span class="chip">민윤희</span>
+        <span class="chip">백무현</span>
+        <span class="chip">안은숙</span>
+        <span class="chip">유혜진</span>
+        <span class="chip">임은진</span>
+        <span class="chip">정희석</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🚄 교통편</h2>
+    <div class="card">
+      <div class="kv">
+        <div class="k">KTX(하)</div>
+        <div class="v"><b>용산 08:40</b> → 순천 11:20</div>
+      </div>
+      <div class="kv">
+        <div class="k">KTX(상)</div>
+        <div class="v">순천 14:51 → <b>수서/용산 17:36</b></div>
+      </div>
+      <div class="kv">
+        <div class="k">렌터카</div>
+        <div class="v">스포티지 2대 <small>· 순천역 11:30 인수 / 14:00 반납</small><br>
+          1호차 유혜진·김영민 &nbsp;/&nbsp; 2호차 정희석·민윤희</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🛏️ 숙소</h2>
+    <div class="lodge">
+      <div class="item">
+        <span class="day">1일차</span>
+        <div>
+          <div class="name">여수 알앤에프(R&amp;F) 비즈니스 호텔</div>
+          <div class="loc">여수시 시청·학동 권역</div>
+        </div>
+      </div>
+      <div class="item">
+        <span class="day">2일차</span>
+        <div>
+          <div class="name">켄싱턴리조트 지리산하동</div>
+          <div class="loc">경남 하동군 화개면</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🗓️ 일정</h2>
+
+    <details class="day" open>
+      <summary>
+        <span class="badge">DAY 1</span>
+        <span>11.20 (금)</span>
+        <span class="sub">순천만 갈대 &amp; 여수 밤바다</span>
+        <span class="chev">▾</span>
+      </summary>
+      <div class="body">
+        <div class="timeline">
+          <div class="t-item"><div class="time">11:20–11:40</div><div class="desc">순천역 도착, 렌터카 2대 인수</div></div>
+          <div class="t-item"><div class="time">11:40–13:00</div><div class="desc"><b>중식</b> · 순천 맛집</div></div>
+          <div class="t-item"><div class="time">13:10–15:10</div><div class="desc"><b>순천만습지</b> 관광 <small>60~80분 소요</small></div></div>
+          <div class="t-item"><div class="time">15:10–16:00</div><div class="desc">여수 R&amp;F 호텔 이동</div></div>
+          <div class="t-item"><div class="time">16:00–17:30</div><div class="desc">호텔 체크인 &amp; 여수 해안가 산책</div></div>
+          <div class="t-item"><div class="time">17:30–19:30</div><div class="desc"><b>석식</b> · 여수 로컬 미식</div></div>
+          <div class="t-item"><div class="time">19:45–20:45</div><div class="desc"><b>돌산공원</b> 야경 <small>여수 밤바다 조망 / 주차장 앞 평지</small></div></div>
+          <div class="t-item"><div class="time">21:00–</div><div class="desc">숙소 복귀, 친목 다과회</div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="day">
+      <summary>
+        <span class="badge">DAY 2</span>
+        <span>11.21 (토)</span>
+        <span class="sub">순천 문화의거리 &amp; 팀별 탐방</span>
+        <span class="chev">▾</span>
+      </summary>
+      <div class="body">
+        <div class="timeline">
+          <div class="t-item"><div class="time">09:00–09:40</div><div class="desc">여수 숙소 체크아웃 → 순천 문화의거리</div></div>
+          <div class="t-item"><div class="time">09:40–10:10</div><div class="desc">행동 공영주차장 · 옥천변 한옥 골목길 산책</div></div>
+          <div class="t-item"><div class="time">10:10–11:20</div><div class="desc"><b>8인 합동 티타임</b> · 한옥 베이커리 카페</div></div>
+          <div class="t-item"><div class="time">11:20–11:30</div><div class="desc">주차장 복귀 후 1·2호차 분기 출발</div></div>
+        </div>
+
+        <div class="split">
+          <div class="team">
+            <h4>🚗 1호차 · 구례 힐링팀</h4>
+            <ul>
+              <li>11:30 구례 이동</li>
+              <li>12:10 중식 (지리산 정식)</li>
+              <li>13:35 오산 사성암 (셔틀 왕복)</li>
+              <li>15:25 화엄사 대나무 숲길</li>
+              <li>16:20 하동 켄싱턴 도착</li>
+            </ul>
+          </div>
+          <div class="team">
+            <h4>🚙 2호차 · 보성 다향팀</h4>
+            <ul>
+              <li>11:30 벌교읍 이동</li>
+              <li>12:05 중식 (참꼬막 정식)</li>
+              <li>13:20 태백산맥 문학거리 · 보성여관</li>
+              <li>14:35 대한다원 녹차밭</li>
+              <li>15:45 하동 켄싱턴 도착</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="t-item"><div class="time">16:50–18:00</div><div class="desc">켄싱턴리조트 체크인 &amp; 계곡 조망 휴식</div></div>
+          <div class="t-item"><div class="time">18:15–20:00</div><div class="desc"><b>8인 합동 석식</b> · 특식</div></div>
+          <div class="t-item"><div class="time">20:00–</div><div class="desc">화개골 밤공기와 함께 정담회</div></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="day">
+      <summary>
+        <span class="badge">DAY 3</span>
+        <span>11.22 (일)</span>
+        <span class="sub">하동 명품 차 &amp; 평사리 들판</span>
+        <span class="chev">▾</span>
+      </summary>
+      <div class="body">
+        <div class="timeline">
+          <div class="t-item"><div class="time">06:40–07:40</div><div class="desc">새벽 산책 · 화개천 계곡 데크길 <small>자유 참여</small></div></div>
+          <div class="t-item"><div class="time">07:40–08:40</div><div class="desc"><b>조식</b> · 리조트 지하 한식당 뷔페</div></div>
+          <div class="t-item"><div class="time">08:40–09:10</div><div class="desc">짐 정리, 체크아웃 <small>09:10 정시 출발</small></div></div>
+          <div class="t-item"><div class="time">09:15–10:15</div><div class="desc">하동 화개 찻집 · 티뮤지엄 &amp; 수제차 시음</div></div>
+          <div class="t-item"><div class="time">10:30–11:40</div><div class="desc">최참판댁 &amp; 평사리 들판 <small>소설 《토지》 배경지</small></div></div>
+          <div class="t-item"><div class="time">11:45–12:45</div><div class="desc"><b>오찬</b> · 하동 악양 향토식당 <small>예약 필수</small></div></div>
+          <div class="t-item"><div class="time">12:45–13:35</div><div class="desc">순천역 이동 <small>12:45 정시 출발 필수</small></div></div>
+          <div class="t-item"><div class="time">13:35–14:00</div><div class="desc">주유 &amp; 렌터카 반납 <small>14:00 마감</small></div></div>
+          <div class="t-item"><div class="time">14:00–14:51</div><div class="desc">순천역 대합실 휴식</div></div>
+          <div class="t-item"><div class="time">14:51</div><div class="desc"><b>KTX 탑승</b> · 용산/서울행</div></div>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>✅ 체크리스트</h2>
+    <div class="card">
+      <ul class="check-list">
+        <li class="done"><span class="dot">✓</span> 여수 숙박 예약 <span class="who">유혜진</span></li>
+        <li class="done"><span class="dot">✓</span> 하동 숙박 예약 <span class="who">유혜진</span></li>
+        <li class="done"><span class="dot">✓</span> 렌트카 예약 <span class="who">정희석 · 김영민</span></li>
+        <li class="done"><span class="dot">✓</span> 여행 루트 초안 <span class="who">정희석</span></li>
+        <li><span class="dot"></span> KTX 표 예매 <span class="who">10월 21일</span></li>
+        <li><span class="dot"></span> 맛집 찾기 <span class="who">민윤희 · 김희경</span></li>
+        <li><span class="dot"></span> 카페 찾기 <span class="who">임은진</span></li>
+        <li><span class="dot"></span> 야식 타임 <span class="who">백무현</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>🎒 준비물</h2>
+    <div class="card pack">
+      <p class="note">11월 하순 남도는 낮엔 온화(13~16℃)하지만 아침·저녁은 매섭습니다(새벽 체감 2~5℃). 겹쳐 입는 레이어드 룩이 필수예요.</p>
+      <ul>
+        <li><b>탈착형 겉옷</b> — 경량 패딩, 플리스, 바람막이</li>
+        <li><b>보온 소품</b> — 머플러 / 넥워머 / 무릎담요</li>
+        <li><b>보행화</b> — 편안한 워킹화 / 운동화</li>
+        <li><b>덧신·두꺼운 양말</b> — 화엄사·사성암 등 좌식 공간용</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+</div>
+
+<footer>
+  이 페이지는 검색엔진에 노출되지 않으며 링크를 아는 사람만 볼 수 있습니다.
+</footer>
+
+</body>
+</html>
