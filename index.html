@@ -273,6 +273,31 @@
   .split .team ul{margin:0;padding-left:16px;font-size:12.5px;color:var(--sub);}
   .split .team ul li{margin-bottom:3px;}
 
+  .branch-options{display:grid;gap:8px;margin-top:14px;}
+  .branch-options .opt{
+    background:var(--chip);
+    border-radius:12px;
+    padding:11px 13px;
+  }
+  .branch-options .opt-h{
+    font-size:13px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    gap:7px;
+  }
+  .branch-options .opt-d{font-size:12px;color:var(--sub);margin-top:4px;line-height:1.5;}
+  .branch-options .opt-d small{display:block;margin-top:2px;}
+  .branch-options .tag{
+    font-size:10.5px;
+    font-weight:700;
+    padding:2px 8px;
+    border-radius:999px;
+    background:var(--accent2-soft);
+    color:var(--accent2);
+  }
+  .branch-options .tag.alt{background:var(--accent-soft);color:var(--accent);}
+
   .route-map{margin-top:14px;}
   .route-map .cap{font-size:12px;font-weight:700;color:var(--sub);margin:0 0 8px 2px;}
   .route-map img{
@@ -514,22 +539,34 @@
       <summary>
         <span class="badge">DAY 2</span>
         <span>11.21 (토)</span>
-        <span class="sub">순천 문화의거리 &amp; 팀별 탐방</span>
+        <span class="sub">체크아웃 &amp; 팀별 탐방</span>
         <span class="chev">▾</span>
       </summary>
       <div class="body">
         <div class="timeline">
-          <div class="t-item"><div class="time">09:00–09:40</div><div class="desc">여수 숙소 체크아웃 → 순천 문화의거리</div></div>
-          <div class="t-item"><div class="time">09:40–10:10</div><div class="desc">행동 공영주차장 · 옥천변 한옥 골목길 산책</div></div>
-          <div class="t-item"><div class="time">10:10–11:20</div><div class="desc"><b>8인 합동 티타임</b> · 한옥 베이커리 카페</div></div>
-          <div class="t-item"><div class="time">11:20–11:30</div><div class="desc">주차장 복귀 후 1·2호차 분기 출발</div></div>
+          <div class="t-item"><div class="time">09:00</div><div class="desc">여수 숙소 체크아웃 · 1·2호차 각자 목적지로 출발 <small>아래 옵션 중 택1 — 선택에 따라 출발시각 유동적</small></div></div>
+        </div>
+
+        <div class="branch-options">
+          <div class="opt">
+            <div class="opt-h">① 직행</div>
+            <div class="opt-d">경유 없이 숙소에서 바로 각자 목적지로 출발</div>
+          </div>
+          <div class="opt">
+            <div class="opt-h">② 순천만487카페 <span class="tag">위치 최적</span></div>
+            <div class="opt-d">티타임 후 분기 · 구례 46분·47km / 벌교 24분·19km <small>대형카페 · 주차 넉넉</small></div>
+          </div>
+          <div class="opt">
+            <div class="opt-h">③ 와온해변카페 <span class="tag alt">고평점</span></div>
+            <div class="opt-d">티타임 후 분기 · 구례 55분·47km / 벌교 37분·35km <small>오션뷰 · 리뷰 우수</small></div>
+          </div>
         </div>
 
         <div class="split">
           <div class="team">
             <h4>🚗 1호차 · 구례 힐링팀</h4>
             <ul>
-              <li>11:30 구례 이동</li>
+              <li>출발 후 구례 이동 (직행 기준 11:30대 도착)</li>
               <li>12:10 중식 (지리산 정식)</li>
               <li>13:35 오산 사성암 (셔틀 왕복)</li>
               <li>15:25 화엄사 대나무 숲길</li>
@@ -539,7 +576,7 @@
           <div class="team">
             <h4>🚙 2호차 · 보성 다향팀</h4>
             <ul>
-              <li>11:30 벌교읍 이동</li>
+              <li>출발 후 벌교읍 이동 (직행 기준 11:30대 도착)</li>
               <li>12:05 중식 (참꼬막 정식)</li>
               <li>13:20 태백산맥 문학거리 · 보성여관</li>
               <li>14:35 대한다원 녹차밭</li>
